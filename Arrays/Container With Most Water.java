@@ -1,0 +1,21 @@
+// contain most water
+class Solution{
+    public int maxArea(int[] height){
+        int max=0;
+        int l=0;
+        int r=height.length-1;
+        while(l < r ){
+            int w=(r-l);
+            int h=Math.min(height[l],height[r]);
+           int  area=w*h;
+            max=Math.max(area,max);
+            if(height[l]<height[r]){
+                l++;
+            }
+            else{
+                r--;
+            }
+        }
+        return max;
+    }
+}
